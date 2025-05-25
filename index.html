@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Iluminación - ESP32</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Panel de Control - Habitación</h1>
+
+    <div class="estado">
+      <p><strong>Luz:</strong> <span id="estado-luz">---</span></p>
+      <p><strong>LDR:</strong> <span id="valor-ldr">---</span></p>
+      <p><strongPIR:</strong> <span id="valor-pir">---</span></p>
+    </div>
+
+    <div class="controles">
+      <button onclick="enviarControl('encender')">Encender</button>
+      <button onclick="enviarControl('apagar')">Apagar</button>
+      <button onclick="enviarControl('automatico')">Modo Automático</button>
+    </div>
+
+    <div class="ambientes">
+      <h2>Ambientes</h2>
+      <button onclick="ajustarAmbiente('lectura')">Lectura</button>
+      <button onclick="ajustarAmbiente('relajacion')">Relajación</button>
+      <button onclick="ajustarAmbiente('fiesta')">Fiesta</button>
+      <button onclick="ajustarAmbiente('trabajo')">Trabajo</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
